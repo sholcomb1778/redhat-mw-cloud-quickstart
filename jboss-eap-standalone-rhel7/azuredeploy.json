@@ -8,11 +8,22 @@
         "description": "Linux VM user account name"
       }
     },
-    "adminPassword": {
-      "type": "securestring",
-      "metadata": {
-        "description": "Administrator password for Linux VM user account"
-      }
+    "authenticationType": {	
+      "type": "string",	
+      "defaultValue": "password",	
+      "allowedValues": [	
+        "sshPublicKey",	
+        "password"	
+      ],	
+      "metadata": {	
+        "description": "Type of authentication to use on the Virtual Machine."	
+      }	
+    },
+    "adminPasswordOrKey": {	
+      "type": "securestring",	
+      "metadata": {	
+        "description": "SSH Key or password for the Virtual Machine."	
+      }	
     },
     "dnsLabelPrefix": {
       "type": "string",
@@ -50,18 +61,12 @@
         "description": "Red Hat Subscription Manager Pool (must contain JBoss EAP entitlement)."
       }
     },
-    "sshKeyData": {
-      "type": "securestring",
-      "metadata": {
-        "description": "SSH RSA public key file as a string."
-      }
-    },
     "_artifactsLocation": {
       "type": "string",
       "metadata": {
         "description": "The base URI where artifacts required by this template are located. When the template is deployed using the accompanying scripts, a private location in the subscription will be used and this value will be automatically generated."
       },
-      "defaultValue": "https://raw.githubusercontent.com/SpektraSystems/redhat-mw-cloud-quickstart/master/jboss-eap-standalone-rhel8/"
+      "defaultValue": "https://raw.githubusercontent.com/SpektraSystems/redhat-mw-cloud-quickstart/suraj-rhel77/jboss-eap-standalone-rhel7"
     },
     "_artifactsLocationSasToken": {
       "type": "securestring",
@@ -83,7 +88,7 @@
     "escapedQuote": "\"",
     "imagePublisher": "redhat",
     "imageOffer": "rhel",
-    "imageSKU": "8",
+    "imageSKU": "7.7",
     "baseName": "[uniquestring(parameters('dnsLabelPrefix'),resourceGroup().id)]",
     "nicName": "[concat('myNic8',variables('baseName'))]",
     "addressPrefix": "10.0.0.0/16",
@@ -99,7 +104,18 @@
     "storageAccountName": "[concat('vsts8',variables('baseName'))]",
     "ScriptFolder": "scripts",
     "ScriptFileName": "eap-setup-redhat.sh",
-    "subnet1Ref": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnet1Name'))]"
+    "subnet1Ref": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnet1Name'))]",
+    "linuxConfiguration": {	
+      "disablePasswordAuthentication": true,	
+      "ssh": {	
+        "publicKeys": [	
+          {	
+            "path": "[concat('/home/', parameters('adminUsername'), '/.ssh/authorized_keys')]",	
+            "keyData": "[parameters('adminPasswordOrKey')]"	
+          }	
+        ]	
+      }	
+    }
   },
   "resources": [
     {
@@ -253,8 +269,9 @@
         "osProfile": {
           "computerName": "[variables('vmName')]",
           "adminUsername": "[parameters('adminUsername')]",
-          "adminPassword": "[parameters('adminPassword')]",
-          "customData": "[base64(variables('publicIPAddressName'))]"
+          "adminPassword": "[parameters('adminPasswordOrKey')]",
+          "customData": "[base64(variables('publicIPAddressName'))]",
+          "linuxConfiguration": "[if(equals(parameters('authenticationType'), 'password'), json('null'), variables('linuxConfiguration'))]"
         },
         "storageProfile": {
           "imageReference": {
@@ -295,7 +312,7 @@
           "fileUris": [
             "[concat(parameters('_artifactsLocation'), '/', variables('ScriptFolder'), '/', variables('ScriptFileName'), parameters('_artifactsLocationSasToken'))]"
           ],
-          "commandToExecute": "[concat('sh eap-setup-redhat.sh',' ',parameters('adminUsername'),' ',parameters('eapUserName'),' ',variables('singlequote'),parameters('eapPassword'),variables('singlequote'),' ',parameters('rhsmUserName'),' ',variables('singlequote'),parameters('rhsmPassword'),variables('singlequote'),' ', parameters('rhsmPool'),' ',variables('escapedQuote'),parameters('sshKeyData'),variables('escapedQuote'))]"
+          "commandToExecute": "[concat('sh eap-setup-redhat.sh',' ',parameters('adminUsername'),' ',parameters('eapUserName'),' ',variables('singlequote'),parameters('eapPassword'),variables('singlequote'),' ',parameters('rhsmUserName'),' ',variables('singlequote'),parameters('rhsmPassword'),variables('singlequote'),' ', parameters('rhsmPool'))]"
         }
       }
     }
