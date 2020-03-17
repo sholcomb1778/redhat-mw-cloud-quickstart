@@ -24,9 +24,9 @@
 
 JBoss EAP is an open source platform for highly transactional, web-scale Java applications. EAP combines the familiar and popular Jakarta EE specifications with the latest technologies, like Microprofile, to modernize your applications from traditional Java EE into the new world of DevOps, cloud, containers, and microservices. EAP includes everything needed to build, run, deploy, and manage enterprise Java applications in a variety of environments, including on-premise, virtual environments, and in private, public, and hybrid clouds.
 
-This template deploys a web applicaton deployed on JBoss EAP 7.2 cluster running on RHEL 8.
+Red Hat Subscription Management (RHSM) is a customer-driven, end-to-end solution that provides tools for subscription status and management and integrates with Red Hat's system management tools. To obtain a rhsm account go to: www.redhat.com and sign in.
 
-To obtain a rhsm account go to: www.redhat.com and sign in.
+This template deploys a web applicaton deployed on JBoss EAP 7.2 cluster running on RHEL 8.
 
 ## Template Solution Architecture
 This template creates all of the compute resources to run JBoss EAP 7 on top of RHEL 7.2, deploying the following components:
@@ -48,23 +48,11 @@ https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_applicati
 
 ## Licenses and Costs
 
-This uses RHEL 8.0 image which is a PAY AS YOU GO image and doesn't require the user to license it, it will be licensed automatically after the instance is launched first time and user will be charged hourly in addition to Microsoft's Linux VM rates.  Click [here](https://azure.microsoft.com/en-gb/pricing/details/virtual-machines/linux/#red-hat) for pricing details. You also need to have a RedHat account to register to Red Hat Subscription Manager (RHSM). Click [here](https://access.redhat.com/products/red-hat-subscription-management) to know more about RHSM and pricing.
-
-## Solution overview and deployed resources
-This template creates all of the compute resources to run JBoss EAP 7 on top of RHEL 7.2, deploying the following components:
-- RHEL 7.2 VM 
-- Public DNS 
-- Private Virtual Network 
-- Security Configuration 
-- JBoss EAP 7
-- Sample application deployed to JBoss EAP 7
-
-To learn more about JBoss Enterprise Application Platform, check out:
-https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/
+This uses RHEL 8.0 image which is a PAY AS YOU GO image and doesn't require the user to license it; it will be licensed automatically after the instance is launched the first time and the user will be charged hourly in addition to Microsoft's Linux VM rates.  Click [here](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/linux/#red-hat) for pricing details. You also need to have a RedHat account to register to Red Hat Subscription Manager (RHSM). Click [here](https://access.redhat.com/products/red-hat-subscription-management) to know more about RHSM and pricing.
 
 ## Prerequisites
 
-1. Azure Subscription with specified payment method (RHEL 8 is a market place product and requires payment method to be specified in Azure Subscription)
+1. Azure Subscription with specified payment method (RHEL 8 is a Azure Marketplace product and requires the payment method to be specified in Azure Subscription)
 
 2. To deploy the template, you will need to:
 
@@ -120,7 +108,7 @@ The deployment takes about 10 minutes to complete.
 
 ## Post Deployment Steps
 
-- Once the deployment is successfull, click on the "Outputs" to see the URL of the SSH Command, App WEB URLs:
+- Once the deployment is successful, click on the "Outputs" to see the URL of the SSH Command, App WEB URLs:
 
 <img src="images/templateOutput.png" width="800">
 
