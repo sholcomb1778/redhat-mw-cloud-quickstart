@@ -8,22 +8,28 @@
           "description": "User name for the Virtual Machine."
         }
       },
-      "location": {
-        "type": "string",
-        "defaultValue": "[resourceGroup().location]",
-        "metadata": {
-          "description": "Location for all resources."
-        }
-      },
       "authenticationType": {
         "type": "string",
-        "defaultValue": "sshPublicKey",
+        "defaultValue": "password",
         "allowedValues": [
           "sshPublicKey",
           "password"
         ],
         "metadata": {
-          "description": "Type of authentication to use on the Virtual Machine. SSH key is recommended."
+          "description": "Type of authentication to use on the Virtual Machine."
+        }
+      },
+      "adminPasswordOrKey": {
+            "type": "securestring",
+            "metadata": {
+              "description": "SSH Key or password for the Virtual Machine. SSH key is recommended."
+            }
+      },
+      "location": {
+        "type": "string",
+        "defaultValue": "[resourceGroup().location]",
+        "metadata": {
+          "description": "Location for all resources."
         }
       },
       "EAPUser": {
@@ -45,14 +51,8 @@
               "description": "Base URL for Marketplace Deployment",
               "artifactsBaseUrl": ""
             },
-            "defaultValue": "https://raw.githubusercontent.com/SpektraSystems/redhat-mw-cloud-quickstart/master/jboss-eap-clustered-rhel-VMSS/"
-          },
-          "adminPasswordOrKey": {
-            "type": "securestring",
-            "metadata": {
-              "description": "SSH Key or password for the Virtual Machine. SSH key is recommended."
-            }
-          },
+            "defaultValue": "https://raw.githubusercontent.com/SpektraSystems/redhat-mw-cloud-quickstart/suraj-rhel77/jboss-eap-clustered-rhel7-VMSS/"
+        },
       "jbosseapstrgType": {
         "type": "string",
         "defaultValue": "Standard_LRS",
@@ -79,7 +79,7 @@
       "skuName": "Aligned",
       "imagePublisher": "RedHat",
       "imageOffer": "RHEL",
-      "imageSku": "8",
+      "imageSku": "7.7",
       "nic1Name": "[concat(uniquestring(variables('vm1Name')), 'nic')]",
       "nic2Name": "[concat(uniquestring(variables('vm2Name')), 'nic')]",
       "addressPrefix": "10.3.0.0/16",
