@@ -39,15 +39,15 @@ https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_applicati
 
 ## Licenses and Costs 
 
-This uses RHEL 8.0 image which is a PAY AS YOU GO image and doesn't require the user to license it, it will be licensed automatically after the instance is launched first time and user will be charged hourly in addition to Microsoft's Linux VM rates.  Click [here](https://azure.microsoft.com/en-gb/pricing/details/virtual-machines/linux/#red-hat) for pricing details.
+This uses RHEL 8.0 image which is a PAY AS YOU GO image and doesn't require the user to license it; it will be licensed automatically after the instance is launched the first time and the user will be charged hourly in addition to Microsoft's Linux VM rates.  Click [here](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/linux/#red-hat) for pricing details.
 
 ## Prerequisites
 
-1. Azure Subscription with specified payment method (RHEL 8 is a market place product and requires payment method to be specified in Azure Subscription)
+1. Azure Subscription with specified payment method (RHEL 8 is a Azure Marketplace product and requires payment method to be specified in Azure Subscription)
 
 2. To deploy the template, you will need to:
 
-    - Choose an admin user name and password for your VM.  
+    - Choose an admin username and password/ssh key for your VM.  
 
     - Choose a EAP user name and password to enable the EAP manager UI and deployment method.
     
@@ -64,8 +64,10 @@ Build your environment with EAP 7.2 on top of RHEL 8.0 which is added to the bac
     - **Location** - Choose the right location for your deployment.
 
     - **Admin Username** - User account name for logging into your RHEL VM.
+    
+    - **Authentication Type** - Type of authentication to use on the Virtual Machine.
 
-    - **Admin Password** - User account password for logging into your RHEL VM.
+    - **Admin Password or Key** - User account password/ssh key for logging into your RHEL VM.
 
     - **EAP Username** - User name for EAP Console.
 
@@ -79,7 +81,7 @@ The deployment takes approx. 10 minutes to complete.
 
 ## Post Deployment Steps
 
-- Once the deployment is successfull, go the VM and copy the Public IP of the VM which is the Public IP of the Load Balancer.
+- Once the deployment is successful, go the VM and copy the Public IP of the VM which is the Public IP of the Load Balancer.
 - Open a web browser and go to **http://<PUBLIC_HOSTNAME>** and you should see the web page:
 
 <img src="image/eap.png" width="800">
