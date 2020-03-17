@@ -40,7 +40,7 @@ This template creates all of the compute resources to run JBoss EAP 7 on top of 
 
 Following is the Architecture :
 
-<img src="images/RHEL7-EAP-arch.png" width="800">
+<img src="images/RHEL7-EAP-arch.PNG" width="800">
 
 To learn more about JBoss Enterprise Application Platform, check out:
 https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/
