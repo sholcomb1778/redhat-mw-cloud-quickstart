@@ -50,17 +50,6 @@ https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_applicati
 
 This uses RHEL 7.7 image which is a PAY AS YOU GO image and doesn't require the user to license it; it will be licensed automatically after the instance is launched the first time and the user will be charged hourly in addition to Microsoft's Linux VM rates.  Click [here](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/linux/#red-hat) for pricing details. You also need to have a RedHat account to register to Red Hat Subscription Manager (RHSM). Click [here](https://access.redhat.com/products/red-hat-subscription-management) to know more about RHSM and pricing.
 
-## Solution overview and deployed resources
-This template creates all of the compute resources to run JBoss EAP 7 on top of RHEL 7.2, deploying the following components:
-- RHEL 7.2 VM 
-- Public DNS 
-- Private Virtual Network 
-- Security Configuration 
-- JBoss EAP 7
-- Sample application deployed to JBoss EAP 7
-
-To learn more about JBoss Enterprise Application Platform, check out:
-https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/
 
 ## Prerequisites
 
