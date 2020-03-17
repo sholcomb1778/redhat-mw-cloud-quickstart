@@ -8,22 +8,28 @@
           "description": "User name for the Virtual Machine."
         }
       },
-      "location": {
-        "type": "string",
-        "defaultValue": "[resourceGroup().location]",
-        "metadata": {
-          "description": "Location for all resources."
-        }
-      },
       "authenticationType": {
         "type": "string",
-        "defaultValue": "sshPublicKey",
+        "defaultValue": "password",
         "allowedValues": [
           "sshPublicKey",
           "password"
         ],
         "metadata": {
-          "description": "Type of authentication to use on the Virtual Machine. SSH key is recommended."
+          "description": "Type of authentication to use on the Virtual Machine."
+        }
+      },
+      "adminPasswordOrKey": {
+            "type": "securestring",
+            "metadata": {
+              "description": "SSH Key or password for the Virtual Machine. SSH key is recommended."
+            }
+      },
+      "location": {
+        "type": "string",
+        "defaultValue": "[resourceGroup().location]",
+        "metadata": {
+          "description": "Location for all resources."
         }
       },
       "EAPUser": {
@@ -46,13 +52,7 @@
               "artifactsBaseUrl": ""
             },
             "defaultValue": "https://raw.githubusercontent.com/SpektraSystems/redhat-mw-cloud-quickstart/master/jboss-eap-clustered-rhel-VMSS/"
-          },
-          "adminPasswordOrKey": {
-            "type": "securestring",
-            "metadata": {
-              "description": "SSH Key or password for the Virtual Machine. SSH key is recommended."
-            }
-          },
+        },
       "jbosseapstrgType": {
         "type": "string",
         "defaultValue": "Standard_LRS",
