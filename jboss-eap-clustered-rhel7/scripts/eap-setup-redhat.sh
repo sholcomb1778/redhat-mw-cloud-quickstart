@@ -33,7 +33,7 @@ echo "IP_ADDR: " ${IP_ADDR} >> /home/$1/install.log
 echo "subscription-manager register..." >> /home/$1/install.log
 subscription-manager register --username ${RHSM_USER} --password ${RHSM_PASSWORD} 
 subscription-manager attach --pool=${RHSM_POOL}
-subscription-manager repos --enable=jb-eap-7.2-for-rhel-8-x86_64-rpms 
+subscription-manager repos --enable=jb-eap-7-for-rhel-7-server-rpms 
 
 echo "JBoss EAP RPM installating..." >> /home/$1/install.log
 yum-config-manager --disable rhel-7-server-htb-rpms 
