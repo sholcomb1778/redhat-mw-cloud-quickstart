@@ -646,9 +646,25 @@
       "type": "string",
       "value": "[concat('ssh ', parameters('adminUsername'), '@', reference(variables('publicIPAddress2Name')).dnsSettings.fqdn)]"
     },
-    "Admin Console UI": {
+    "Admin Console VM1": {
       "type": "string",
-      "value": "[concat('http://', reference(variables('publicIPAddresslb')).dnsSettings.fqdn, ':9990/console/')]"
+      "value": "[concat('http://', reference(variables('publicIPAddress1Name')).dnsSettings.fqdn, ':9990/console/')]"
+    },
+    "Admin Console VM2": {
+      "type": "string",
+      "value": "[concat('http://', reference(variables('publicIPAddress2Name')).dnsSettings.fqdn, ':9990/console/')]"
+    },
+    "AppUI-LB": {
+      "type": "string",
+      "value": "[concat('http://', reference(variables('publicIPAddresslb')).dnsSettings.fqdn, '/eap-session-replication/')]"
+    },
+    "AppUI-1": {
+      "type": "string",
+      "value": "[concat('http://', reference(variables('publicIPAddress1Name')).dnsSettings.fqdn, ':8080/eap-session-replication/')]"
+    },
+    "AppUI-2": {
+      "type": "string",
+      "value": "[concat('http://', reference(variables('publicIPAddress2Name')).dnsSettings.fqdn, ':8080/eap-session-replication/')]"
     }
   }
 }
