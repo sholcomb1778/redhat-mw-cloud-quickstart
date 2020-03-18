@@ -56,6 +56,9 @@ echo "start jboss server" >> /home/$1/install.log
 
 $JBOSS_HOME/bin/standalone.sh -bprivate $IP_ADDR --server-config=standalone-azure-ha.xml -Djboss.jgroups.azure_ping.storage_account_name=$STORAGE_ACCOUNT_NAME -Djboss.jgroups.azure_ping.storage_access_key=$STORAGE_ACCESS_KEY -Djboss.jgroups.azure_ping.container=$CONTAINER_NAME -Djava.net.preferIPv4Stack=true &
 
+echo "$JBOSS_HOME/bin/standalone.sh -bprivate $IP_ADDR --server-config=standalone-azure-ha.xml -Djboss.jgroups.azure_ping.storage_account_name=$STORAGE_ACCOUNT_NAME -Djboss.jgroups.azure_ping.storage_access_key=$STORAGE_ACCESS_KEY -Djboss.jgroups.azure_ping.container=$CONTAINER_NAME -Djava.net.preferIPv4Stack=true &" > /bin/jbossservice.sh
+chmod +x /bin/jbossservice.sh
+
 echo "deploy an applicaiton " >> /home/$1/install.log
 git clone https://github.com/danieloh30/eap-session-replication.git
 cp eap-session-replication/target/eap-session-replication.war $JBOSS_HOME/standalone/deployments/
