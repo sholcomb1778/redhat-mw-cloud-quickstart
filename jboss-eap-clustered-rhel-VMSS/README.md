@@ -19,7 +19,7 @@
 
 JBoss EAP is an open source platform for highly transactional, web-scale Java applications. EAP combines the familiar and popular Jakarta EE specifications with the latest technologies, like Microprofile, to modernize your applications from traditional Java EE into the new world of DevOps, cloud, containers, and microservices. EAP includes everything needed to build, run, deploy, and manage enterprise Java applications in a variety of environments, including on-premise, virtual environments, and in private, public, and hybrid clouds.
 
-This template creates two JBoss EAP Instances running inside a VNet and each server is in it’s own subnet. Both the servers are added to the backend pool of a Load Balancer.
+This template creates two JBoss EAP Instances running inside a VNet and each server is in it's own subnet. Both the servers are added to the backend pool of a Load Balancer.
 
 ## Template Solution Architecture
 
