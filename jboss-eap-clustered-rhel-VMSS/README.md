@@ -47,9 +47,9 @@ This template uses a RHEL 8.0 image which is a Pay-as-you-go (PAYG) image and do
 
 2. To deploy the template, you will need:
 
-    -  
+    -  **Admin Username** and password for your VM.
 
-    - *EAP Username** and password to enable the EAP manager UI and Deployment Method.
+    - **EAP Username** and password to enable the EAP manager UI and Deployment Method.
     
 ## Deployment Steps
 
@@ -71,7 +71,7 @@ Build your environment with EAP 7.2 on top of RHEL 8.0 which is added to the bac
 
     - **EAP Password** - User account password for EAP Console.
 
-    - Leave the rest of the Parameter Value (artifacts and Location) as is and proceed to purchase. 
+    - Leave the rest of the Parameter Values as is and proceed to purchase. 
     
 ## Deployment Time 
 
