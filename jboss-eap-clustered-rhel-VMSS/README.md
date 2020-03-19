@@ -43,19 +43,19 @@ This uses RHEL 8.0 image which is a PAY AS YOU GO image and doesn't require the 
 
 ## Prerequisites
 
-1. Azure Subscription with specified payment method (RHEL 8 is a market place product and requires payment method to be specified in Azure Subscription)
+1. Azure Subscription with specified payment method (RHEL 8.0 is a market place product and requires payment method to be specified in Azure Subscription)
 
 2. To deploy the template, you will need to:
 
-    - Choose an admin user name and password for your VM.  
+    - Choose an admin username and password for your VM.  
 
-    - Choose a EAP user name and password to enable the EAP manager UI and deployment method.
+    - Choose a EAP username and password to enable the EAP manager UI and deployment method.
     
 ## Deployment Steps
 
 Build your environment with EAP 7.2 on top of RHEL 8.0 which is added to the backend pool of the Load Balancer on Azure in a few simple steps:  
-1. Launch the Template by click on Deploy to Azure button.  
-2. Fill in the following parameter values. Then accept the terms and condition before clicking on Purchase.
+1. Launch the Template by clicking Deploy to Azure button.  
+2. Fill in the following parameter values and accept the terms and condition before clicking on Purchase.
 
     - **Subscription** - Choose the right subscription where you would like to deploy.
 
@@ -67,7 +67,7 @@ Build your environment with EAP 7.2 on top of RHEL 8.0 which is added to the bac
 
     - **Admin Password** - User account password for logging into your RHEL VM.
 
-    - **EAP Username** - User name for EAP Console.
+    - **EAP Username** - Username for EAP Console.
 
     - **EAP Password** - User account password for EAP Console.
 
@@ -79,7 +79,7 @@ The deployment takes approx. 10 minutes to complete.
 
 ## Post Deployment Steps
 
-- Once the deployment is successfull, go the VM and copy the Public IP of the VM which is the Public IP of the Load Balancer.
+- Once the deployment is successfull, go to the VM and copy the Public IP of the VM which is the Public IP of the Load Balancer.
 - Open a web browser and go to **http://<PUBLIC_HOSTNAME>** and you should see the web page:
 
 <img src="image/eap.png" width="800">
