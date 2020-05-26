@@ -70,7 +70,7 @@ Click this [Red Hat KB article on RHSM](https://access.redhat.com/products/red-h
 
 ## Prerequisites
 
-1. Azure Subscription with the specified payment method (RHEL 8 is an [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/RedHat.RedHatEnterpriseLinux80-ARM?tab=Overview) product and requires a payment method to be specified in the Azure Subscription). If you select the RHEL OS License type as BYOS (Bring-Your-Own-Subscription), please follow steps mentioned under section 'Subscriptions and Costs'.
+1. Azure Subscription with the specified payment method.  RHEL 8 is an [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/RedHat.RedHatEnterpriseLinux80-ARM?tab=Overview) product and requires a payment method to be specified in the Azure Subscription. If you select the RHEL OS License type as BYOS (Bring-Your-Own-Subscription), please follow the steps mentioned under section 'Subscriptions and Costs'.
 
 2. To deploy the template, you will need:
 
@@ -84,15 +84,15 @@ Click this [Red Hat KB article on RHSM](https://access.redhat.com/products/red-h
 
 Build your environment with JBoss EAP 7.2 cluster on top of n number of RHEL 8.0 VMs where n is decided by the user and all the VMs are added to the backend pool of a Load Balancer on Azure in a few simple steps:  
 1. Launch the template by clicking the **Deploy to Azure** button.  
-2. Complete the following parameter values and accept the terms and conditions before clicking on the **Purchase** button.
+2. Complete the following parameter values and accept the Terms and Conditions before clicking on the **Purchase** button.
 
-    - **Subscription** - Choose the appropriate subscription where you would like to deploy.
+    - **Subscription** - Choose the appropriate subscription for deployment.
 
-    - **Resource Group** - Create a new Resource Group or you can select an existing one.
+    - **Resource Group** - Create a new Resource Group or select an existing one.
 
-    - **Location** - Choose the appropriate location for your deployment.
+    - **Location** - Choose the appropriate location for deployment.
 
-    - **Admin Username** - User account name for logging into your RHEL VM.
+    - **Admin Username** - User account name for logging into the RHEL VM.
     
     - **Authentication Type** - Type of authentication to use on the Virtual Machine.
 
@@ -110,7 +110,7 @@ Build your environment with JBoss EAP 7.2 cluster on top of n number of RHEL 8.0
    
     - **RHSM Pool ID for EAP** - Red Hat Subscription Manager Pool ID (Should have EAP entitlement)
 
-    - **RHSM Pool ID for RHEL OS** - Red Hat Subscription Manager Pool ID (Should have RHEL entitlement). Mandartory if you select the BYOS RHEL OS License type. You can leave it blank if you select RHEL OS License type PAYG.
+    - **RHSM Pool ID for RHEL OS** - Red Hat Subscription Manager Pool ID (Should have RHEL entitlement). This is mandatory when selecting BYOS RHEL OS as license type.  This should be left blank when selecting RHEL OS License type PAYG.
 
     - **Storage Replication** - Choose the Replication Strategy for your Storage account.
 
@@ -118,7 +118,7 @@ Build your environment with JBoss EAP 7.2 cluster on top of n number of RHEL 8.0
 
     - **Number of Instances** - Number of VMs to be deployed.
 
-    - Leave the rest of the parameter values (artifacts and location) as is and proceed to purchase.
+    - Leave the rest of the parameter values (artifacts and location) as is, accept the Terms & Conditions and proceed to purchase.
     
 ## Deployment Time 
 
@@ -144,18 +144,18 @@ The deployment takes approximately 10 minutes to complete.
   
   ![alt text](images/eap-session-rep.png)
 
-- Note that in the EAP Session Replication page of Load Balancer, the private IP displayed is that of one of the VMs. If you click on Increment Counter/Refresh button when you stop VM,restart VM or if the service the VM corresponding to the Private IP displayed is down, the private IP displayed will change to that of another VM but the Session ID remains the same which shows that the Session got replicated.
+- Note that in the EAP Session Replication page of Load Balancer, the private IP displayed is that of one of the VMs. If you click on Increment Counter/Refresh button when you stop VM, restart VM or if the service the VM corresponding to the Private IP displayed is down, the private IP displayed will change to that of another VM but the Session ID remains the same which shows that the Session got replicated.
 
   ![alt text](images/eap-ses-rep.png)
 
 ## Troubleshoot
 
-This section is to give you a idea on troubleshooting the issues that might face when you deploy this template. If the parameter criteria are not fulfilled(like the Admin Password criteria) or if any parameter that are mandatory are not filled in the parameters section then the deployment will not start. Also make sure that you accept the terms and condition mentioned before you click on Purchase. Once the deployment starts you can clearly see the resources getting deployed on the deployment page and if any deployment fails you can see which of the resources failed and check the deployment failure message for more details. If your deployment fails due to the script extension, you can see that the VM is already deployed so please login to the VM to check the logs for more troubleshooting. The logs are stored in the file jbosseap.install.log in path /var/lib/waagent/custom-script/download/0 or /var/lib/waagent/custon-script/download/1. The script can fail due to various reasons like incorrect RHSM Username/Password. This log file give you a clear message on why the script failed and exited. So you can use this log file to detect errors and troubleshoot them. Please run the following commands to check the logs once you login to the VM.
+This section provides information on troubleshooting some of the issues you might face when deploying this template. If the parameter criteria are not fulfilled (ex.- the Admin Password criteria) or if any mandatory parameters are not provided, the deployment will not start. Also the Terms & Conditions mentioned must be accepted before clicking on Purchase. Once the deployment starts the resources being deployed will be visible on the deployment page and in the case of any deployment failure a more detailed failure message is available.  If the deployment fails due to the script extension, you can see the VM is already deployed so login to the VM to check the logs for more troubleshooting detail. The logs are stored in the file jbosseap.install.log in path /var/lib/waagent/custom-script/download/0 or /var/lib/waagent/custon-script/download/1. The script can fail due to various reasons like incorrect RHSM Username/Password. This log file gives you a clear message on why the script failed and exited.  Use these logs to detect and correct errors.  Run the following commands to check the logs once you login to the VM.
 
 - Switch to Root user to avoid permission issues
 `sudo su -`
 
-- Enter you VM admin Password if prompted. It might prompt you for password only if you selected the Authentication Type as Password.
+- Enter you VM Admin Password if prompted. It might prompt you for password only if you selected the Authentication Type as Password.
 
 - Move to the directory where the logs are stored
 `cd /var/lib/waagent/custom-script/download`
