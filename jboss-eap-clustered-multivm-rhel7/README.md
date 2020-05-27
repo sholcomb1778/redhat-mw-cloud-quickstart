@@ -84,7 +84,7 @@ Click this [Red Hat KB article on RHSM](https://access.redhat.com/products/red-h
 Build your environment with JBoss EAP 7.2 cluster on top of n number of RHEL 7.7 VMs where n is decided by the user and all the VMs are added to the backend pool of a Load Balancer on Azure in a few simple steps:
 
 1. Launch the template by clicking the **Deploy to Azure** button.  
-2. Complete the following parameter values and accept the Terms and Donditions before clicking on the **Purchase** button.
+2. Complete the following parameter values and accept the Terms and Conditions before clicking on the **Purchase** button.
 
     - **Subscription** - Choose the appropriate subscription for deployment.
 
