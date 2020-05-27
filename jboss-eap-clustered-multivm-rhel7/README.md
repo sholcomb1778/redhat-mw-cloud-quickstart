@@ -13,7 +13,7 @@
 
 1. [Solution Overview](#solution-overview)
 2. [Template Solution Architecture](#template-solution-architecture)
-3. [Licenses, Subscriptions and Costs](#licenses-subscriptions-and-costs)
+3. [Subscriptions and Costs](#subscriptions-and-costs)
 4. [Prerequisites](#prerequisites)
 5. [Deployment Steps](#deployment-steps)
 6. [Deployment Time](#deployment-time)
@@ -25,11 +25,9 @@
 
 ## Solution Overview
 
-JBoss EAP (Enterprise Application Platform) is an open source platform for highly transactional, web-scale Java applications. EAP combines the familiar and popular Jakarta EE specifications with the latest technologies, like Microprofile, to modernize your applications from traditional Java EE into the new world of DevOps, cloud, containers, and microservices. EAP includes everything needed to build, run, deploy, and manage enterprise Java applications in a variety of environments, including on-premise, virtual environments, and in private, public, and hybrid clouds.
+JBoss EAP (Enterprise Application Platform) is an open source platform for highly transactional, web-scale Java applications. EAP combines the familiar and popular Jakarta EE specifications with the latest technologies, like Microprofile, to modernize your applications from traditional Java EE into the new world of DevOps, cloud, containers, and microservices. EAP includes everything needed to build, run, deploy, and manage enterprise Java applications in a variety of environments, including on-premises, virtual environments, and in private, public, and hybrid clouds.
 
-Red Hat Subscription Management (RHSM) is a customer-driven, end-to-end solution that provides tools for subscription status and management and integrates with Red Hat's system management tools. To obtain an rhsm account for JBoss EAP, go to: www.redhat.com.
-
-This Azure quickstart template creates all of the compute resources to run JBoss EAP 7.2 cluster running on n number of RHEL 7.7 VMs where n is decided by the user and all the VMs are added to the backend pool of a Load Balancer.
+Red Hat Subscription Management (RHSM) is a customer-driven, end-to-end solution that provides tools for subscription status and management and integrates with Red Hat's system management tools. To obtain an RHSM account for JBoss EAP, go to: www.redhat.com.
 
 ## Template Solution Architecture
 
