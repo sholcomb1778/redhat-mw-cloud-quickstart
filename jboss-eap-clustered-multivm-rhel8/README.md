@@ -63,13 +63,13 @@ In addition you also need to have a Red Hat account to register to Red Hat Subsc
 
 You can select the RHEL OS License type as BYOS (Bring-Your-Own-Subscription) for deploying the template to avoid double billing. Your RHSM account must have both Red Hat Enterprise Linux entitlement (for subscribing the RHEL OS for the VM) and EAP entitlement and you will have to enter both the pool IDs as mentioned in the template. To provision the RHEL-BYOS VM in your subscription, you will have to enable it for Cloud Access from the Red Hat Customer Portal and activate Red Hat Gold Images for your subscription. You can enable your subscription for cloud access by following the instructions in this Red Hat KB article: [Enabling and Maintaining Subscriptions for Cloud Access](https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/con-enable-subs) and activate the Red Hat Gold Images by following the instructions defined in this Red Hat KB articile for [enabling Azure Access](https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/using_red_hat_gold_images#con-azure-access). Once your Azure subscription is enabled follow the Microsoft instructions for [Azure Marketplace terms](https://docs.microsoft.com/en-us/azure/virtual-machines/workloads/redhat/byos) to accept the Marketplace terms for RHEL-BYOS image from your Azure subscriptions.
 
-Note that in both cases your RHSM account needs EAP entitlement to use the Enterprise Application Platform. If you don't have EAP entitlement, obtain a [JBoss EAP evaluation subscription](https://access.redhat.com/products/red-hat-jboss-enterprise-application-platform/evaluation) before you get started..
+Note that in both cases your RHSM account needs EAP entitlement to use the Enterprise Application Platform. If you don't have EAP entitlement, obtain a [JBoss EAP evaluation subscription](https://access.redhat.com/products/red-hat-jboss-enterprise-application-platform/evaluation) before you get started.
 
 Click this [Red Hat KB article on RHSM](https://access.redhat.com/products/red-hat-subscription-management) to learn more about Red Hat Subscription Manager.
 
 ## Prerequisites
 
-1. Azure Subscription with the specified payment method.  RHEL 8 is an [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/RedHat.RedHatEnterpriseLinux80-ARM?tab=Overview) product and requires a payment method to be specified in the Azure Subscription. If you select the RHEL OS License type as BYOS (Bring-Your-Own-Subscription), please follow the steps mentioned under section 'Subscriptions and Costs'.
+1. Azure Subscription with the specified payment method.  RHEL 8 is an [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/RedHat.RedHatEnterpriseLinux80-ARM?tab=Overview) product and requires a payment method to be specified in the Azure Subscription. If you select the RHEL OS License Type as BYOS (Bring-Your-Own-Subscription), follow the steps mentioned under section 'Subscriptions and Costs'.
 
 2. To deploy the template, you will need:
 
@@ -82,6 +82,7 @@ Click this [Red Hat KB article on RHSM](https://access.redhat.com/products/red-h
 ## Deployment Steps
 
 Build your environment with JBoss EAP 7.2 cluster on top of n number of RHEL 8.0 VMs where n is decided by the user and all the VMs are added to the backend pool of a Load Balancer on Azure in a few simple steps:  
+
 1. Launch the template by clicking the **Deploy to Azure** button.  
 2. Complete the following parameter values and accept the Terms and Conditions before clicking on the **Purchase** button.
 
@@ -109,7 +110,7 @@ Build your environment with JBoss EAP 7.2 cluster on top of n number of RHEL 8.0
    
     - **RHSM Pool ID for EAP** - Red Hat Subscription Manager Pool ID (Should have EAP entitlement)
 
-    - **RHSM Pool ID for RHEL OS** - Red Hat Subscription Manager Pool ID (Should have RHEL entitlement). This is mandatory when selecting BYOS RHEL OS as license type.  This should be left blank when selecting RHEL OS License type PAYG.
+    - **RHSM Pool ID for RHEL OS** - Red Hat Subscription Manager Pool ID (Should have RHEL entitlement). This is mandatory when selecting BYOS RHEL OS as License Type.  This should be left blank when selecting RHEL OS License Type PAYG.
 
     - **Storage Replication** - Choose the [Replication Strategy](https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy) for your Storage account.
 
