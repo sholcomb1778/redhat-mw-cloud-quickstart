@@ -107,7 +107,7 @@ Build your environment with JBoss EAP 7.2 on top of RHEL 7.7 on Azure by clickin
    
    - **VM Size** - Choose the appropriate size of the VM from the dropdown options.
 
-   - Leave the rest of the parameter values (artifacts and Location) as is, nd accept the Terms and Conditions and click on Purchase
+   - Leave the rest of the parameter values (artifacts and Location) as is, accept the Terms and Conditions and click on Purchase
     
 ## Deployment Time 
 
