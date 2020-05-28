@@ -9,7 +9,7 @@ ms.date: 05/11/2020
 
 # Quickstart: WildFly on CentOS
 
-This quickstart shows you how to deploy standalone node of WildFly on top of CentOS 8 VM. This is ideal for development and testing of enterprise Java applications on Azure.
+This Quickstart shows you how to deploy the standalone node of WildFly on top of CentOS 8 VM. This is ideal for development and testing of enterprise Java applications on Azure.
 
 ## Prerequisites
 
@@ -17,9 +17,9 @@ This quickstart shows you how to deploy standalone node of WildFly on top of Cen
 
 ## Use case
 
-WildFly is ideal for development and testing of enterprise Java applications on Azure. List of technologies available in WildFly 18 server configuration profiles is listed in the table in https://docs.wildfly.org/18/Getting_Started_Guide.html#getting-started-with-wildfly.
+WildFly is ideal for development and testing of enterprise Java applications on Azure. List of technologies available in WildFly 18 server configuration profiles are available in the [Wildfly Getting Started Guide](https://docs.wildfly.org/18/Getting_Started_Guide.html#getting-started-with-wildfly).
 
-You can also use WildFly in Standalone mode and in Cluster mode as per your use case. You can ensure high availability of critical Jakarta EE applications by WildFly on a cluster of nodes, making a small number of application configuration changes, and then deploying the application in the cluster. To learn more on this please check https://docs.wildfly.org/18/High_Availability_Guide.html
+You can  use WildFly in either Standalone mode or Cluster mode per your use case. You can ensure high availability of critical Jakarta EE applications by WildFly on a cluster of nodes, making a small number of application configuration changes, and then deploying the application in the cluster. To learn more on this please check the [Wildfly High Availability Guide}(https://docs.wildfly.org/18/High_Availability_Guide.html).
 
 ## Configuration choice
 
@@ -67,25 +67,25 @@ Similarly to start an alternate configuration in domain mode:
 
 `./domain.sh --domain-config=my-domain-configuration.xml`
 
-You know more on the configurations you can check https://docs.wildfly.org/18/Getting_Started_Guide.html#wildfly-10-configurations.
+To learn more on the configurations check the [Wildfly Getting Started Guide] (https://docs.wildfly.org/18/Getting_Started_Guide.html#wildfly-10-configurations).
 
 > Note that this template deploys a WildFly in Standalone mode.
 
 ## Support and subscription notes
 
-Azure CentOS 8 image is a Pay-as-you-go (PAYG) VM image and does not require the user to license. The VM will be licensed automatically after the instance is launched for the first time and user will be charged hourly in addition to Microsoft's Linux VM rates. Click [here](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/linux/#linux) for pricing details. WildFly is free to download and use and does not require a Red Hat Subscription or any License.
+Azure CentOS 8 image is a Pay-as-you-go (PAYG) VM image and does not require the user to license. The VM will be licensed automatically after the instance is launched for the first time and the user will be charged hourly in addition to Microsoft's Linux VM rates. Click [Linux VM Pricing](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/linux/#linux) for details. WildFly is free to download and use and does not require a Red Hat Subscription or any License.
 
 ## How to consume
 
 You can deploy the template in three following ways :
 
-- Using Powershell : You can use powershell to deploy the template by running the following commands. Please check [here](https://docs.microsoft.com/en-us/powershell/azure/?view=azps-2.8.0) to install and configure Azure PowerShell.
+- Using Powershell : You can use powershell to deploy the template by running the following commands. Please visit [Azure Powershell](https://docs.microsoft.com/en-us/powershell/azure/?view=azps-2.8.0) for information on installing and configuring Azure PowerShell.
 
     `New-AzResourceGroup -Name <resource-group-name> -Location <resource-group-location> #use this command when you need to create a new resource group for your deployment`
 
     `New-AzResourceGroupDeployment -ResourceGroupName <resource-group-name> -TemplateUri https://raw.githubusercontent.com/SpektraSystems/redhat-mw-cloud-quickstart/master/wildfly-standalone-centos8/azuredeploy.json`
     
-- Using Azure CLI : You can use Azure CLI to deploy the template by running the following commands. Please check [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) to install and configure the Azure Cross-Platform Command-Line Interface.
+- Using Azure CLI : You can use Azure CLI to deploy the template by running the following commands. Please check [Azure Cross-Platform Command Line](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) for details on installing and configuring the Azure Cross-Platform Command-Line Interface.
 
     `az group create --name <resource-group-name> --location <resource-group-location> #use this command when you need to create a new resource group for your deployment`
 
@@ -95,15 +95,15 @@ You can deploy the template in three following ways :
 
 ## ARM template
 
-<a href="https://github.com/SpektraSystems/redhat-mw-cloud-quickstart/tree/master/wildfly-standalone-centos8" target="_blank"> WildFly 18 on CentOS 8 (stand-alone VM)</a> - This is a quickstart template that creates a standalone node of WildFly 18.0.1.Final on CentOS 8 VM in your Resource Group (RG) which includes a Public DNS name, Virtual Network and Network Security Group. It also deploys Java Sample Application named JBoss-EAP on Azure on Wildfly.
+<a href="https://github.com/SpektraSystems/redhat-mw-cloud-quickstart/tree/master/wildfly-standalone-centos8" target="_blank"> WildFly 18 on CentOS 8 (stand-alone VM)</a> - This is a Quickstart template that creates a standalone node of WildFly 18.0.1.Final on CentOS 8 VM in your Resource Group (RG) which includes a Public DNS name, Virtual Network and Network Security Group. It also deploys Java Sample Application named JBoss-EAP on Azure on Wildfly.
 
 ## Resource Links:
 
-Know more about [WildFly](https://wildfly.org/)
+Learn more about [WildFly](https://wildfly.org/)
 
 ## Next steps
 
-To learn more about the WildFly 18.0.0.Final, visit: https://docs.wildfly.org/18/.
+Visit [Wildfly18](https://docs.wildfly.org/18/) to learn more about Wildfly 18.
 
 If you're interested in Red Hat JBoss EAP Azure Quickstart templates, you can find it here:
 
