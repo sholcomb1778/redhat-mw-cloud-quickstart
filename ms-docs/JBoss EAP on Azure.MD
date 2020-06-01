@@ -20,7 +20,7 @@ This quickstart shows you how to deploy JBoss EAP on top of Red Hat Enterprise L
 
 Red Hat JBoss Enterprise Application Platform (JBoss EAP) 7.2 is a certified implementation of the Java Enterprise Edition (Java EE) 8 specification. JBoss EAP provides preconfigured options for features such as high-availability clustering, messaging, and distributed caching. It also enables users to write, deploy, and run applications using the various APIs and services that JBoss EAP provides. Check the features of JBoss EAP [here](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html-single/introduction_to_jboss_eap/index#about_eap).
 
-JBoss EAP 7.2 can used to develop the following Applications:
+You can develop the following applications with JBoss EAP 7.2:
 
 * Web Services Applications - Web services provide a standard means of interoperating among different software applications. Each application can run on a variety of platforms and frameworks. Web services facilitate internal, heterogeneous subsystem communication. To know more about Developing Web Services Applications click [here](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html/developing_web_services_applications/index).
 
