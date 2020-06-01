@@ -45,7 +45,8 @@ Following is the Architecture:
 
 To learn more about the JBoss Enterprise Application Platform, visit [Red Hat EAP 7.2 documentation](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/).
 
-## Subscriptions and Costs - READ the instructions in their entirety before deploying
+## Subscriptions and Costs
+READ the instructions in their entirety before deploying
 
 [Linux virtual machines in Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/) provides additional documentation for deploying VMs in Azure.
 
