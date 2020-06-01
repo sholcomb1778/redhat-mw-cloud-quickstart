@@ -48,7 +48,7 @@ Following is the Architecture:
 
 To learn more visit the [Wildfly Documentation](https://docs.wildfly.org/18/) site.
 
-## Licenses, Subscriptions and Costs 
+## Subscriptions and Costs 
 
 This template uses an Azure CentOS 8 image which is a Pay-As-You-Go (PAYG) VM image and does not require the user to license. The VM will be licensed automatically after the instance is launched for the first time and the user will be charged hourly in addition to Microsoft's Linux VM rates.  [Linux Virtual Machine](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/linux/#linux) provides pricing details. WildFly is free to download and use and does not require a Red Hat Subscription or License.
 
