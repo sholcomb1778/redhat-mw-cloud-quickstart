@@ -45,7 +45,8 @@ Following is the Architecture:
 
 To learn more about the JBoss Enterprise Application Platform, visit [Red Hat EAP 7.2 documentation](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/).
 
-## Subscriptions and Costs - READ the instructions in their entirety before deploying
+## Subscriptions and Costs
+READ the instructions in their entirety before deploying
 
 [Linux virtual machines in Azure](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/) provides additional documentation for deploying VMs in Azure.
 
@@ -57,7 +58,7 @@ If you are only using one pool ID for all nodes, then enter the same pool ID for
 
 In addition you also need to have a Red Hat account to register to Red Hat Subscription Manager (RHSM) and install JBoss EAP. If you have a valid Red Hat subscription, register for Cloud Access, [request access](https://access.redhat.com/public-cloud) to the BYOS RHEL image in the Private Azure Marketplace and follow the below mentioned steps.
 
-You can select the RHEL OS License type as BYOS (Bring-Your-Own-Subscription) for deploying the template to avoid double billing. Your RHSM account must have both Red Hat Enterprise Linux entitlement (for subscribing the RHEL OS for the VM) and EAP entitlement and you will have to enter both the pool IDs as mentioned in the template. To provision the RHEL-BYOS VM in your subscription, you will have to enable it for Cloud Access from the Red Hat Customer Portal and activate Red Hat Gold Images for your subscription. You can enable your subscription for cloud access by following the instructions in this Red Hat KB article: [Enabling and Maintaining Subscriptions for Cloud Access](https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/con-enable-subs) and activate the Red Hat Gold Images by following the instructions defined in this Red Hat KB articile for [enabling Azure Access](https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/using_red_hat_gold_images#con-azure-access). Once your Azure subscription is enabled follow the Microsoft instructions for [Azure Marketplace terms](https://docs.microsoft.com/en-us/azure/virtual-machines/workloads/redhat/byos) to accept the Marketplace terms for RHEL-BYOS image from your Azure subscriptions.
+You can select the RHEL OS License type as BYOS (Bring-Your-Own-Subscription) for deploying the template to avoid double billing. Your RHSM account must have both Red Hat Enterprise Linux entitlement (for subscribing the RHEL OS for the VM) and EAP entitlement and you will have to enter both the pool IDs as mentioned in the template. To provision the RHEL-BYOS VM in your subscription, you will have to enable it for Cloud Access from the Red Hat Customer Portal and activate Red Hat Gold Images for your subscription. You can enable your subscription for cloud access by following the instructions in this Red Hat KB article: [Enabling and Maintaining Subscriptions for Cloud Access](https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/con-enable-subs) and activate the Red Hat Gold Images by following the instructions defined in this Red Hat KB article for [enabling Azure Access](https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/using_red_hat_gold_images#con-azure-access). Once your Azure subscription is enabled follow the Microsoft instructions for [Azure Marketplace terms](https://docs.microsoft.com/en-us/azure/virtual-machines/workloads/redhat/byos) to accept the Marketplace terms for RHEL-BYOS image from your Azure subscriptions.
 
 Note that in both cases your RHSM account needs EAP entitlement to use the Enterprise Application Platform. If you don't have EAP entitlement, obtain a [JBoss EAP evaluation subscription](https://access.redhat.com/products/red-hat-jboss-enterprise-application-platform/evaluation) before you get started.
 
@@ -144,6 +145,10 @@ This section provides information on troubleshooting some of the issues you may 
 - View the logs in jbosseap.install.log
 
     `more jbosseap.install.log`
+    
+ If you select BYOS as RHEL OS License Type make sure to complete the prerequisite steps before starting your deployment.  To provision the RHEL-BYOS VM in your subscription, you must enable it for Cloud Access from the Red Hat Customer Portal and activate Red Hat Gold Images for your subscription. You can enable you subscription for Cloud Access by following the instructions in this Red Hat KB article: [Enabling and Maintaining Subscriptions for Cloud Access](https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/con-enable-subs) and activate the Red Hat Gold Images by following the instructions defined in this Red Hat KB article for [enabling Azure Access](https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/using_red_hat_gold_images#con-azure-access). If this is not done you will encounter errors with validating the template due to 'marketplace purchase eligibility failed'.
+
+Once your Azure subscription is enabled follow the Microsoft instructions for [Azure Marketplace terms](https://docs.microsoft.com/en-us/azure/virtual-machines/workloads/redhat/byos) to accept the Marketplace terms for RHEL-BYOS image from your Azure subscriptions; otherwise your template will fail.
 
 
 ## Notes
