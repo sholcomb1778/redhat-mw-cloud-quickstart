@@ -110,7 +110,7 @@ JBoss EAP is available on Azure through BYOS model only, you need to supply your
 
 ## Deployment Steps
 
-Build your environment with JBoss EAP 7.2 on top of RHEL 7.7 on Azure by clicking the **Deploy to Azure** button and fill in the following parameter values:
+Build your environment with JBoss EAP 7.2 on a VM running RHEL 7.7 on Azure by clicking the **Deploy to Azure** button and fill in the following parameter values:
 
    - **Subscription** - Choose the appropriate subscription where you would like to deploy.
 
