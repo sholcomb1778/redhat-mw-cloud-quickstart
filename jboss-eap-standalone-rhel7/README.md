@@ -49,8 +49,8 @@ Following is the Architecture:
 
 This quickstart is designed to give multiple choice in terms of RHEL OS licensing. 
 
-- Red Hat Enterprise Linux OS as PAYG(Pay as you go) or BYOS(Bring your own Subscription).
-- Red Hat JBoss Enterprise Application Platform(EAP) is available through BYOS(Bring your own subscription) only.
+- Red Hat Enterprise Linux OS as PAYG (Pay-As-You-Go) or BYOS (Bring-Your-Own-Subscription).
+- Red Hat JBoss Enterprise Application Platform(EAP) is available through BYOS (Bring-Your-Own-Subscription) only.
 
 
 #### Using RHEL OS with PAYG Model
@@ -78,13 +78,13 @@ In order to use BYOS for RHEL OS Licensing, you need to have a valid Red Hat sub
     
 3. Accept the marketplace terms and conditions in Azure for the RHEL BYOS Images. You can complete that by running Azure CLI commands, as given below. Refer [documentation](https://docs.microsoft.com/en-us/azure/virtual-machines/workloads/redhat/byos) for more details on this.
 
-    3.1 Launch an Azure CLI session and authenticate with your Azure account. Refer [this](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli?view=azure-cli-latest)for assistance.
+    3.1 Launch an Azure CLI session and authenticate with your Azure account. Refer [this](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli?view=azure-cli-latest) for assistance.
 
     3.2 Verify that RHEL BYOS images are available in your subscription by running the following CLI command. If you don't get any results here, please refer to #2 and ensure that your Azure subscription is activated for RHEL BYOS images.
 
     `az vm image list --offer rhel-byos --all`
 
-    3.3 Run following command to accept the marketplace terms for RHEL 7.7 BYOS.
+    3.3 Run the following command to accept the marketplace terms for RHEL 7.7 BYOS.
 
     `az vm image terms accept --publisher redhat --offer rhel-byos --plan rhel-lvm77`
 
@@ -170,7 +170,7 @@ This section includes common errors faced during deployments and details on how 
 
 - Once the deployment starts you will be able to see the resources getting deployed on the deployment page and if any resource deployment fails you can see which of the resources failed and check the deployment failure message for more details. 
 
-- If your deployment fails at the **VM Custom Script Extension** resource, please refer to next section for further troubleshooting.
+- If your deployment fails at the **VM Custom Script Extension** resource, please refer to the next section for further troubleshooting.
 
 
 #### Troubleshooting EAP deployment extension
@@ -180,9 +180,9 @@ This quickstart template uses VM Custom Script Extension to deploy and configure
 - Invalid Red Hat Subscription credentials or EAP entitlements
 - Invalid EAP/RHEL OS entitlement Pool ID
 
-Please follow below process to troubleshoot this further
+Please follow the below mentioned process to troubleshoot this further
 
-1. Login to the provisioned virutal machine through SSH. You can retrive the Public IP of the VM using Azure portal VM overview page.
+1. Login to the provisioned virtual machine through SSH. You can retrieve the Public IP of the VM using the Azure portal VM overview page.
 
 2. Switch to root user
 
@@ -198,8 +198,8 @@ Please follow below process to troubleshoot this further
 
     `more jbosseap.install.log`
 
-This log file should have details that includes deployment failure reason and possible solutions. If your deployment failsed due to Red Hat subscription manager account or entitlements, please refer to 'Licenses, Subscriptions and Costs' section to complete the pre-requisite and try again. 
-Please refer this [documentation](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/custom-script-linux) for more details on troubleshooting VM custom script extensions.
+This log file should have details that include deployment failure reason and possible solutions. If your deployment failed due to RHSM account or entitlements, please refer to 'Licenses, Subscriptions and Costs' section to complete the pre-requisite and try again. 
+Please refer to this [documentation](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/custom-script-linux) for more details on troubleshooting VM custom script extensions.
 
 ## Support 
 
