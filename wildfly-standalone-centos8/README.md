@@ -12,12 +12,12 @@
 
 1. [Solution Overview](#solution-overview)
 2. [Template Solution Architecture](#template-solution-architecture)
-3. [Licenses, Subscriptions and Costs](#licenses-subscriptions-and-costs)
+3. [Subscriptions and Costs](#subscriptions-and-costs)
 4. [Prerequisites](#prerequisites)
 5. [Deployment Steps](#deployment-steps)
 6. [Deployment Time](#deployment-time)
 7. [Validation Steps](#validation-steps)
-8. [Troubleshoot](#troubleshoot)
+8. [Troubleshooting](#troubleshooting)
 9. [Notes](#notes)
 10. [Support](#support)
 
@@ -29,15 +29,15 @@ This template creates a standalone node of WildFly on CentOS VM of Standard_DS2_
 
 WildFly is an open-source application server runtime that is exceptionally fast, flexible, lightweight and powerful. It is Jakarta EE 8 Full Platform and Web Profile compatible.  The state-of-the-art architecture built on the Modular Service Container enables services on-demand when your application requires them.
 
-This Azure quickstart template deploys WildFly 18.0.1.Final running on CentOS 8 VM.
+The technology behind WildFly is also available in Red Hat JBoss Enterprise Application Platform (EAP), a hardened enterprise subscription including Red Hat world-class support, long multi-year maintenance cycles and exclusive content. JBoss EAP is an open-soure application server that you can download for free for development use. To obtain a Red Hat Subscription Management (RHSM) account for JBoss EAP, go to: www.redhat.com. Red Hat Subscription Management (RHSM) is a customer-driven, end-to-end solution that provides tools for subscription status and management and integrates with Red Hat's system management tools.
 
-The technology behind WildFly is also available in Red Hat JBoss Enterprise Application Platform (EAP), a hardended enterprise subscription with Red Hat's world-class support, long multi-year maintenance cycles and exclusive content. JBoss EAP is an open-soure application server that you can download for free, for developement use. To obtain a Red Hat Subscription Management (RHSM) account for JBoss EAP, go to: www.redhat.com. Red Hat Subscription Management (RHSM) is a customer-driven, end-to-end solution that provides tools for subscription status and management and integrates with Red Hat's system management tools.
+To learn more visit the [Wildfly Documentation](https://docs.wildfly.org/18/) site.
 
 ## Template Solution Architecture 
 
-This template creates all the Azure compute resources to run WildFly 18.0.1.Final on top of CentOS 8.0 VM. The following resources are created by this template:
+This Azure Resource Manager (ARM) template creates all the Azure compute resources to run WildFly 18.0.1.Final on top of CentOS 8.0 VM. The following resources are created by this template:
 
-- CentOS 8 VM 
+- CentOS 8 Virtual Machine
 - Public IP 
 - Virtual Network 
 - Network Security Group 
@@ -48,16 +48,13 @@ Following is the Architecture:
 
 ![alt text](images/wildfly-arch.png)
 
-To learn more about the WildFly 18.0.0.Final, visit:
-https://docs.wildfly.org/18/
+## Subscriptions and Costs 
 
-## Licenses, Subscriptions and Costs 
-
-This template uses an Azure CentOS 8 image which is a Pay-as-you-go (PAYG) VM image and does not require the user to license. The VM will be licensed automatically after the instance is launched for the first time and user will be charged hourly in addition to Microsoft's Linux VM rates.  Click [here](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/linux/#linux) for pricing details. WildFly is free to download and use and does not require a Red Hat Subscription or any License, for more details click [here](https://www.wildfly.org/).
+This template uses an Azure CentOS 8 image which is a Pay-As-You-Go (PAYG) VM image and does not require the user to license. The VM will be licensed automatically after the instance is launched for the first time and the user will be charged hourly in addition to Microsoft's Linux VM rates.  [Linux Virtual Machine](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/linux/#linux) provides pricing details. WildFly is free to download and use and does not require a Red Hat Subscription or License.
 
 ## Prerequisites 
 
-1. Azure Subscription with specified payment method (CentOS-Based 8.0 is an [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/openlogic.centos?tab=Overview) product and requires a payment method to be specified in the Azure Subscription)
+1. Azure Subscription with specified payment method. CentOS-Based 8.0 is an Azure Marketplace product and requires a payment method to be specified in the Azure Subscription.
 
 2. To create the VM, you will need:
 
@@ -69,19 +66,19 @@ This template uses an Azure CentOS 8 image which is a Pay-as-you-go (PAYG) VM im
 
 Build your environment with WildFly 18.0.1.Final on top of CentOS 8.0 on Azure in a few simple steps:  
 1. Launch the template by clicking on the **Deploy to Azure** button.  
-2. Complete the following parameter values.Then accept the terms and conditions before clicking on the **Purchase** button.
+2. Complete the following parameter values, accept the Terms and Conditions and click on the **Purchase** button.
 
-    - **Subscription** - Choose the appropriate subscription where you would like to deploy.
+    - **Subscription** - Choose the appropriate subscription for deployment.
 
-    - **Resource Group** - Create a new Resource Group or you can select an existing one.
+    - **Resource Group** - Create a new Resource Group or select an existing one.
 
-    - **Location** - Choose the appropriate location for your deployment.
+    - **Location** - Choose the appropriate location for deployment.
 
-    - **Admin Username** - User account name for logging into your CentOS VM.
+    - **Admin Username** - User account name for logging into the CentOS VM.
 
     - **Authentication Type** - Type of authentication to use on the Virtual Machine.
 
-    - **Admin Password or SSH Key** - User account password/ssh key data which is an SSH RSA public key for logging into your CentOS VM.
+    - **Admin Password or SSH Key** - User account password/ssh key data which is an SSH RSA public key for logging into the CentOS VM.
 
     - **WildFly Username** - Username for WildFly Console Manager.
 
@@ -89,7 +86,7 @@ Build your environment with WildFly 18.0.1.Final on top of CentOS 8.0 on Azure i
 
     - **VM Size** - Choose the appropriate size of the VM from the dropdown options.
 
-    - Leave the rest of the parameter values (artifacts and location) as is and proceed to purchase.
+    - Leave the rest of the parameter values (artifacts and Location) as is, accept the Terms & Conditions and proceed to purchase.
 
 ## Deployment Time 
 
@@ -109,9 +106,9 @@ The deployment takes less than 10 minutes to complete.
 
   ![alt text](images/wildfly-console.png)
 
-## Troubleshoot
+## Troubleshooting
 
-This section is to give you a idea on troubleshooting the issues that might face when you deploy this template. If the parameter criteria are not fulfilled(like the Admin Password criteria) or if any parameter that are mandatory are not filled in the parameters section then the deployment will not start. Also make sure that you accept the terms and condition mentioned before you click on Purchase. Once the deployment starts you can clearly see the resources getting deployed on the deployment page and if any deployment fails you can see which of the resources failed and check the deployment failure message for more details. If your deployment fails due to the script extension, you can see that the VM is already deployed so please login to the VM to check the logs for more troubleshooting. The logs are stored in the file wildfly.install.log in path /var/lib/waagent/custom-script/download/0. This log file give you a clear message on why the script failed and exited. So you can use this log file to detect errors and troubleshoot them. Please run the following commands to check the logs once you login to the VM.
+This section provides guidance on issues you may run into when deploying this template. If any of parameter criteria is not fulfilled (ex.- the Admin Password criteria) or if any mandatory parameters are not provided in the parameters section, then the deployment will not start. Also ensure that you accept the Terms and Conditions mentioned before you click on Purchase. Once the deployment starts the resources being deployed will be visible on the deployment page and in the case of any deployment failure a more detailed failure message is available. If your deployment fails due to the script extension, you will see that the VM is already deployed so please login to the VM to check the logs for further troubleshooting. The logs are stored in the file wildfly.install.log in path /var/lib/waagent/custom-script/download/0. This log file gives you a clear message on why the script failed and exited. Use these logs to detect and correct errors. Run the following commands to check the logs once you login to the VM.
 
 - Switch to Root user to avoid permission issues
 

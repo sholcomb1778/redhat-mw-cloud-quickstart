@@ -12,7 +12,7 @@
 
 1. [Solution Overview](#solution-overview)
 2. [Template Solution Architecture](#template-solution-architecture)
-3. [Licenses, Subscriptions and Costs](#licenses-subscriptions-and-costs)
+3. [Subscriptions and Costs](#subscriptions-and-costs)
 4. [Prerequisites](#prerequisites)
 5. [Deployment Steps](#deployment-steps)
 6. [Deployment Time](#deployment-time)
@@ -24,7 +24,7 @@
 
 ## Solution Overview
 
-JBoss EAP (Enterprise Application Platform) is an open source platform for highly transactional, web-scale Java applications. EAP combines the familiar and popular Jakarta EE specifications with the latest technologies, like Microprofile, to modernize your applications from traditional Java EE into the new world of DevOps, cloud, containers, and microservices. EAP includes everything needed to build, run, deploy, and manage enterprise Java applications in a variety of environments, including on-premise, virtual environments, and in private, public, and hybrid clouds.
+JBoss EAP (Enterprise Application Platform) is an open source platform for highly transactional, web-scale Java applications. EAP combines the familiar and popular Jakarta EE specifications with the latest technologies, like Microprofile, to modernize your applications from traditional Java EE into the new world of DevOps, cloud, containers, and microservices. EAP includes everything needed to build, run, deploy, and manage enterprise Java applications in a variety of environments, including on-premises, virtual environments, and in private, public, and hybrid clouds.
 
 Red Hat Subscription Management (RHSM) is a customer-driven, end-to-end solution that provides tools for subscription status and management and integrates with Red Hat's system management tools. To obtain an rhsm account for JBoss EAP, go to: www.redhat.com and sign in.
 
@@ -49,7 +49,7 @@ To learn more about the JBoss Enterprise Application Platform, visit:
 https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/
 
 
-## Licenses, Subscriptions and Costs
+## Subscriptions and Costs
 
 If you select the RHEL OS License type as PAYG (Pay-As-You-Go), this template uses the On-Demand Red Hat Enterprise Linux 7.7 Pay-As-You-Go image from the Azure Gallery.
 
@@ -80,25 +80,25 @@ Click [here](https://access.redhat.com/products/red-hat-subscription-management)
 
 ## Deployment Steps
 
-Build your environment with JBoss EAP 7.2 on top of RHEL 7.7 on Azure by clicking the **Deploy to Azure** button and fill in the following parameter values:
+Build your environment with JBoss EAP 7.2 setup on RHEL 7.7 on Azure by clicking the **Deploy to Azure** button and fill in the following parameter values:
 
-   - **Subscription** - Choose the appropriate subscription where you would like to deploy.
+   - **Subscription** - Choose the appropriate subscription for deployment.
 
-   - **Resource Group** - Create a new Resource Group or you can select an existing one.
+   - **Resource Group** - Create a new Resource Group or select an existing one.
 
-   - **Location** - Choose the appropriate location for your deployment.
+   - **Location** - Choose the appropriate location for deployment.
 
-   - **Admin Username** - User account name for logging into your RHEL VM.
+   - **Admin Username** - User account name for logging into the RHEL VM.
 
    - **Authentication Type** - Type of authentication to use on the Virtual Machine.
 
-   - **Admin Password or SSH Key** - User account password/ssh key data which is an SSH RSA public key for logging into your RHEL VM.
+   - **Admin Password or SSH Key** - User account password/ssh key data which is an SSH RSA public key for logging into the RHEL VM.
 
    - **JBoss EAP Username** - Username for JBoss EAP Console.
 
    - **JBoss EAP Password** - User account password for JBoss EAP Console.
 
-   - **RHEL OS License Type** - Choose the type of RHEL OS License from the dropdown options for deploying your Virtual Machine.
+   - **RHEL OS License Type** - Choose the type of RHEL OS License from the dropdown options for deploying the Virtual Machine. You will have either the option of PAYG by default or BYOS.
     
    - **RHSM Username** - Username for the Red Hat account.
 
@@ -106,13 +106,13 @@ Build your environment with JBoss EAP 7.2 on top of RHEL 7.7 on Azure by clickin
    
    - **RHSM Pool ID for EAP** - Red Hat Subscription Manager Pool ID (Should have EAP entitlement)
 
-   - **RHSM Pool ID for RHEL OS** - Red Hat Subscription Manager Pool ID (Should have RHEL entitlement). Mandartory if you select the BYOS RHEL OS License type. You can leave it blank if you select RHEL OS License type PAYG.
+   - **RHSM Pool ID for RHEL OS** - Red Hat Subscription Manager Pool ID (Should have RHEL entitlement). This is mandatory when selecting BYOS RHEL OS as License Type.  This should be left blank when selecting RHEL OS License Type PAYG.
 
-   - **Storage Replication** - Choose the Replication Strategy for your Storage account.
+   - **Storage Replication** - Choose the [Replication Strategy](https://docs.microsoft.com/en-us/azure/storage/common/storage-redundancy) for your Storage account.
    
    - **VM Size** - Choose the appropriate size of the VM from the dropdown options.
 
-   - Leave the rest of the parameter values (artifacts and Location) as it is and accept the terms and conditions before clicking on Purchase.
+   - Leave the rest of the parameter values (artifacts and Location) as is, and accept the Terms and Conditions and click on Purchase.
 
 ## Deployment Time 
 

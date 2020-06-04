@@ -12,7 +12,7 @@
 
 1. [Solution Overview](#solution-overview)
 2. [Template Solution Architecture](#template-solution-architecture)
-3. [Licenses, Subscriptions and Costs](#licenses-subscriptions-and-costs)
+3. [Subscriptions and Costs](#subscriptions-and-costs)
 4. [Prerequisites](#prerequisites)
 5. [Deployment Steps](#deployment-steps)
 6. [Deployment Time](#deployment-time)
@@ -24,10 +24,10 @@
 
 ## Solution Overview
 
-JBoss EAP (Enterprise Application Platform) is an open source platform for highly transactional, web-scale Java applications. EAP combines the familiar and popular Jakarta EE specifications with the latest technologies, like Microprofile, to modernize your applications from traditional Java EE into the new world of DevOps, cloud, containers, and microservices. EAP includes everything needed to build, run, deploy, and manage enterprise Java applications in a variety of environments, including on-premise, virtual environments, and in private, public, and hybrid clouds.
-
+JBoss EAP (Enterprise Application Platform) is an open source platform for highly transactional, web-scale Java applications. EAP combines the familiar and popular Jakarta EE specifications with the latest technologies, like Microprofile, to modernize your applications from traditional Java EE into the new world of DevOps, cloud, containers, and microservices. EAP includes everything needed to build, run, deploy, and manage enterprise Java applications in a variety of environments, including on-premises, virtual environments, and in private, public, and hybrid clouds.
 
 This Azure quickstart template creates all of the compute resources to run a web application named "JBoss-EAP on Azure" on JBoss EAP 7.2 setup on RHEL 7.7 VM. To learn more about the JBoss Enterprise Application Platform, visit:
+
 https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/
 
 ## Template Solution Architecture
@@ -45,7 +45,7 @@ Following is the Architecture:
 ![alt text](images/rhel-arch.png)
 
 
-## Licenses, Subscriptions and Costs
+## Subscriptions and Costs
 
 This quickstart is designed to give multiple choice in terms of RHEL OS licensing. 
 
@@ -55,7 +55,7 @@ This quickstart is designed to give multiple choice in terms of RHEL OS licensin
 
 #### Using RHEL OS with PAYG Model
 
-If you select the RHEL OS License type as PAYG (Pay-As-You-Go), this template uses the On-Demand Red Hat Enterprise Linux 7.7 Pay-As-You-Go image from the Azure Gallery. When using this On-Demand image, there is an additional hourly RHEL subscription charge for using this image on top of the normal compute, network and storage costs. At the same time, the instance will be registered to your Red Hat subscription, so you will also be using one of your entitlements. This will lead to "double billing". To avoid this, you would need to build your own RHEL image, which is defined in this [Red Hat KB article](https://access.redhat.com/articles/uploading-rhel-image-to-azure).
+If you select the RHEL OS License Type as PAYG (Pay-As-You-Go), this template uses the On-Demand Red Hat Enterprise Linux 7.7 Pay-As-You-Go image from the Azure Gallery. When using this On-Demand image, there is an additional hourly RHEL subscription charge for using this image on top of the normal compute, network and storage costs. At the same time, the instance will be registered to your Red Hat subscription, so you will also be using one of your entitlements. This will lead to "double billing". To avoid this, you would need to build your own RHEL image, which is defined in this [Red Hat KB article](https://access.redhat.com/articles/uploading-rhel-image-to-azure).
 
 Check [Red Hat Enterprise Linux pricing](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/red-hat/) for details on the RHEL VMs pricing for PAYG model. In order to use RHEL in PAYG model, you will need an Azure Subscription with the specified payment method (RHEL 7.7 is an [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/RedHat.RedHatEnterpriseLinux77-ARM?tab=Overview) product and requires a payment method to be specified in the Azure Subscription). 
 
@@ -76,7 +76,7 @@ In order to use BYOS for RHEL OS Licensing, you need to have a valid Red Hat sub
 
     2.5 Wait for Red Hat Gold Images to be available in your Azure subscription. These are typically available within 3 hours.
     
-3. Accept the marketplace terms and conditions in Azure for the RHEL BYOS Images. You can complete that by running Azure CLI commands, as given below. Refer [documentation](https://docs.microsoft.com/en-us/azure/virtual-machines/workloads/redhat/byos) for more details on this.
+3. Accept the marketplace Terms and Conditions in Azure for the RHEL BYOS Images. You can complete that by running Azure CLI commands, as given below. Refer [documentation](https://docs.microsoft.com/en-us/azure/virtual-machines/workloads/redhat/byos) for more details on this.
 
     3.1 Launch an Azure CLI session and authenticate with your Azure account. Refer [this](https://docs.microsoft.com/en-us/cli/azure/authenticate-azure-cli?view=azure-cli-latest) for assistance.
 
@@ -84,7 +84,7 @@ In order to use BYOS for RHEL OS Licensing, you need to have a valid Red Hat sub
 
     `az vm image list --offer rhel-byos --all`
 
-    3.3 Run the following command to accept the marketplace terms for RHEL 7.7 BYOS.
+    3.3 Run the following command to accept the marketplace Terms for RHEL 7.7 BYOS.
 
     `az vm image terms accept --publisher redhat --offer rhel-byos --plan rhel-lvm77`
 
@@ -112,23 +112,23 @@ JBoss EAP is available on Azure through BYOS model only, you need to supply your
 
 Build your environment with JBoss EAP 7.2 on a VM running RHEL 7.7 on Azure by clicking the **Deploy to Azure** button and fill in the following parameter values:
 
-   - **Subscription** - Choose the appropriate subscription where you would like to deploy.
+   - **Subscription** - Choose the appropriate subscription for deployment.
 
-   - **Resource Group** - Create a new Resource Group or you can select an existing one.
+   - **Resource Group** - Create a new Resource Group or select an existing one.
 
-   - **Location** - Choose the appropriate location for your deployment.
+   - **Location** - Choose the appropriate location for deployment.
 
-   - **Admin Username** - User account name for logging into your RHEL VM.
+   - **Admin Username** - User account name for logging into the RHEL VM.
    
    - **Authentication Type** - Type of authentication to use on the Virtual Machine.
 
-   - **Admin Password or SSH Key** - User account password/ssh key data which is an SSH RSA public key for logging into your RHEL VM.
+   - **Admin Password or SSH Key** - User account password/ssh key data which is an SSH RSA public key for logging into the RHEL VM.
 
    - **JBoss EAP Username** - Username for JBoss EAP Console.
 
    - **JBoss EAP Password** - User account password for JBoss EAP Console.
 
-   - **RHEL OS License Type** - Choose the type of RHEL OS License from the dropdown options for deploying your Virtual Machine.
+   - **RHEL OS License Type** - Choose the type of RHEL OS License from the dropdown options for deploying the Virtual Machine. You will have either the option of PAYG by default or BYOS.
     
    - **RHSM Username** - Username for the Red Hat account.
 
@@ -136,11 +136,11 @@ Build your environment with JBoss EAP 7.2 on a VM running RHEL 7.7 on Azure by c
 
    - **RHSM Pool ID for EAP** - Red Hat Subscription Manager Pool ID (Should have EAP entitlement)
 
-   - **RHSM Pool ID for RHEL OS** - Red Hat Subscription Manager Pool ID (Should have RHEL entitlement). Mandartory if you select the BYOS RHEL OS License type. You can leave it blank if you select RHEL OS License type PAYG.
+   - **RHSM Pool ID for RHEL OS** - Red Hat Subscription Manager Pool ID (Should have RHEL entitlement). This is mandatory when selecting BYOS RHEL OS as License Type.  This should be left blank when selecting RHEL OS License Type PAYG.
 
    - **VM Size** - Choose the appropriate size of the VM from the dropdown options.
 
-   - Leave the rest of the parameter values (artifacts and Location) as is and accept the terms and conditions before clicking on **Purchase**
+   - Leave the rest of the parameter values (artifacts and Location) as is, and accept the Terms and Conditions and click on Purchase
     
 ## Deployment Time 
 
@@ -166,9 +166,9 @@ This section includes common errors faced during deployments and details on how 
 
 #### Azure Platform 
 
-- If the parameter criteria are not fulfilled (like the Admin Password criteria) or if any parameter that is mandatory is not filled in the parameters section then the deployment will not start. 
+- If the parameter criteria are not fulfilled (ex.- the Admin Password criteria) or if any mandatory parameters are not provided in the parameters section then the deployment will not start. Also the Terms & Conditions mentioned must be accepted before clicking on Purchase.
 
-- Once the deployment starts you will be able to see the resources getting deployed on the deployment page and if any resource deployment fails you can see which of the resources failed and check the deployment failure message for more details. 
+- Once the deployment starts the resources being deployed will be visible on the deployment page and in the case of any deployment failure a more detailed failure message is available. 
 
 - If your deployment fails at the **VM Custom Script Extension** resource, please refer to the next section for further troubleshooting.
 
@@ -177,10 +177,10 @@ This section includes common errors faced during deployments and details on how 
 
 This quickstart template uses VM Custom Script Extension to deploy and configure JBoss EAP and configuring the sample application. Your deployment fail at this stage due to several reasons such as
 
-- Invalid Red Hat Subscription credentials or EAP entitlements
+- Invalid Red Hat Subscription credentials or EAP entitlement
 - Invalid EAP/RHEL OS entitlement Pool ID
 
-Please follow the below mentioned process to troubleshoot this further
+Follow the below mentioned process to troubleshoot this further
 
 1. Login to the provisioned virtual machine through SSH. You can retrieve the Public IP of the VM using the Azure portal VM overview page.
 
@@ -188,7 +188,7 @@ Please follow the below mentioned process to troubleshoot this further
 
     `sudo su -`
 
-3. Enter your VM admin Password if prompted.
+3. Enter your VM Admin Password if prompted.
 
 4. Change directory to logging directory
 
